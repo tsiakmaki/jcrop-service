@@ -1,0 +1,45 @@
+
+
+
+function quizresults() {
+	num_of_correct = 0; 
+	num_of_wrong = 0; 
+	
+	$("#quiz").children(":input:radio:checked").each(function() {    
+		name = this.getAttribute("name");  
+		name_arr = name.split("_");
+		num = name_arr[1];
+		checked = this.getAttribute("value"); 
+		correct = $("[name='answer_" + num + "']").attr("value"); 
+		
+		
+		if(checked == correct){
+			num_of_correct++; 
+		} else {
+			num_of_wrong++;
+		}
+	} );
+	
+	result = num_of_correct*1.0/(num_of_correct + num_of_wrong);
+	$("#total_result").text('Your score is: ' + result.toFixed(2));
+	
+}
+
+
+function markVisited(visited, color) {
+	for(i=0; i<visited.length; i++) {
+		//vArr = visited[i].split(":");
+		// ends with
+		//indx = vArr[0].indexOf("_act", vArr[0].length - "_act".length) !== -1;
+		//if(indx) {
+			document.getElementById(visited[i]).style.fill=color;
+		//}
+	}
+
+}
+
+$( document ).ready(function() {
+	// mark visited as white
+	markVisited(visitedArr, '#fff');
+});
+

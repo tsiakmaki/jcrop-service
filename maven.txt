@@ -1,0 +1,6 @@
+# install command
+mvn install:install-file -Dfile=/home/maria/git/java/jcrop-editor/libs/ -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=jar
+
+# must install those, not found in repository 
+mvn install:install-file -Dfile=C:\\git\\java\\jcrop-service\\libs\\org.eclipse.mylyn.wikitext.core_2.2.0.N20140702-2138.jar -DgroupId=org.eclipse.mylyn.wikitext -DartifactId=org.eclipse.mylyn.wikitext.core -Dversion=2.2.0.N20140702-2138 -Dpackaging=jar
+mvn install:install-file -Dfile=C:\\git\\java\\jcrop-service\\libs\\org.eclipse.mylyn.wikitext.mediawiki.core_2.2.0.N20140702-2138.jar -DgroupId=org.eclipse.mylyn.wikitext -DartifactId=org.eclipse.mylyn.wikitext.mediawiki.core -Dversion=2.2.0.N20140702-2138 -Dpackaging=jar
